@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+
+    <form method="POST" name="submit-to-google-sheet">
+      <div class="container">
+        <div class="col-25">
+          <label for="name">Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="name" name="name" placeholder="Your name.." />
+        </div>
+        <div class="col-25">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-75">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email.."
+          />
+        </div>
+
+        <div class="col-25">
+          <label for="phone">Phone</label>
+        </div>
+        <div class="col-75">
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Your phone number.."
+          />
+        </div>
+        <div class="col-25">
+          <label for="course">Course</label>
+        </div>
+        <div class="col-75">
+          <select id="class" name="course">
+            <option value="csit">B.Sc.CSIT</option>
+
+            <option value="bca">BCA</option>
+            <option value="bit">BIT</option>
+          </select>
+        </div>
+        <div class="col-25">
+          <label for="address">Address</label>
+        </div>
+        <div class="col-75">
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Your address.."
+          />
+        </div>
+        <div class="col-25">
+          <label for="message">Message</label>
+        </div>
+        <div class="col-75">
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write something.."
+          ></textarea>
+        </div>
+        <div class="col-100">
+          <input type="submit" value="Submit" onclick="return validate()" />
+          <input type="reset" value="Reset" />
+        </div>
+      </div>
+    </form>
+
+    <script>
+      const scriptURL = "<URL>";
+      const form = document.forms["submit-to-google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+
+      function validate() {
+        alert("Thank you. Your response has been collected.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("detailsbg.jpg");
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: white;
+      }
+
+      form {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 50px auto;
+        max-width: 450px;
+        padding: 20px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        resize: vertical;
+        font-size: 15px;
+      }
+
+      input[type="submit"], input[type="reset"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="reset"] {
+        background-color: #d92424;
+        
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      input[type="reset"]:hover {
+        background-color: #cb1313;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .col-25 {
+        flex: 25%;
+        max-width: 25%;
+      }
+
+      .col-50 {
+        flex: 50%;
+        max-width: 50%;
+      }
+
+      .col-75 {
+        flex: 75%;
+        max-width: 75%;
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+          max-width: 100%;
+        }
+      }
